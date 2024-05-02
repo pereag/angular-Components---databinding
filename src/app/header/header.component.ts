@@ -2,15 +2,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-  @Output() navigationlinkEvent = new EventEmitter<string>();
+  @Output() navLinkOutput = new EventEmitter<string>();
 
-  navigationLinkHandle(link: string) {
-    console.log(link)
-    this.navigationlinkEvent.emit(link)
+  onNavLinkClick(link: string) {
+    this.navLinkOutput.emit(link);
   }
 }
-
-

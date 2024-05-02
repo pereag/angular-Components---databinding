@@ -1,9 +1,14 @@
 <div class="row">
   <div class="col-xs-10">
-    <app-shopping-edit></app-shopping-edit>
-    <hr>
+    <app-shopping-edit
+      (ingredientOutput)="onGetIngredient($event)"
+      (clearOutput)="onClear()"
+      (removeIngredient)="onRemove()"
+    ></app-shopping-edit>
+    <hr />
     <ul class="list-group">
       <a
+        (click)="onClickIngredient($event)"
         class="list-group-item"
         style="cursor: pointer"
         *ngFor="let ingredient of ingredients"

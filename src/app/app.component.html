@@ -1,9 +1,11 @@
-<app-header (navigationlinkEvent)="getNavigationLink($event)"></app-header>
+<app-header (navLinkOutput)="getNavigationLink($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <app-recipes *ngIf="navigationLink === 'recipes'"></app-recipes>
-      <app-shopping-list *ngIf="navigationLink === 'shopping'"></app-shopping-list>
+      <app-shopping-list
+        *ngIf="navigationLink !== 'recipes'"
+      ></app-shopping-list>
     </div>
   </div>
 </div>
